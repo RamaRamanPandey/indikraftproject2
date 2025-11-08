@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping hub </title>
+    <style>
+         *{
+            font-family: "Poppins", sans-serif;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            /* background-color:rgb(255, 243, 229); */
+        }
+        .firstpage{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 2rem;
+            align-items: center;
+             background-color:rgb(255, 243, 229);
+        }
+        .heading{
+            font-size: 2.3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .filterdiv{
+            height: 17vh;
+            width: 94vw;
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 9px .01px  rgba(79, 76, 76, 0.384);
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #product{
+         height: 2.3rem;
+         width: 9rem;
+         border: solid 1.7px rgba(0, 0, 0, 0.18) ;
+         border-radius: .5rem;
+         padding: .7rem;
+        }  
+        #option{
+         height: 2.3rem;
+         width: 9rem;
+         border: solid 1.7px rgba(0, 0, 0, 0.18) ;
+         border-radius: .5rem;
+         padding:  0 .7rem;
+        }
+        .paisa{
+            font-weight: 900;
+            font-size: 1.2rem;
+        } 
+        .range{
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            margin-left: .3rem;
+        }
+         .productdiv{
+            width: 94vw;
+            height: 56vh;
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 9px .01px  rgba(79, 76, 76, 0.384);
+            z-index: 30;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2,1fr);
+            gap: 1rem;
+            padding: 16px;
+        
+            
+        }
+        .box{
+            background-color:rgba(255, 228, 196, 0.472);   
+             border-radius: 1rem;
+            box-shadow: 0px 0px 9px .01px  rgba(79, 76, 76, 0.384);
+            z-index: 1;
+            transition: all 30ms ease-in-out;
+            padding: 0.7rem;
+        }
+        .box:hover{
+            transform: scale(1.08);
+            background-color: rgba(255, 243, 230, 0.563);
+        }
+        .productname{
+            font-size: 1.3em;
+            font-weight: 600;
+
+
+        }
+        .category ,.price ,.star{
+            color: rgba(9, 9, 9, 0.702);
+             margin: 4px;
+          
+        }
+        img{
+            height:5rem;
+            width:5rem;
+            border-radius: .5rem;
+            box-shadow: 0px 0px 7px .6px  rgba(8, 8, 8, 0.384);
+            
+        }
+        .details{
+            margin:.5rem 1em  0rem 0em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+
+        </style>
+</head>
+<body>
+    <div class="firstpage">
+        <div class="heading">🛍️ Shopping Hub</div>
+        <div class="filterdiv">
+            <input type="text" id="product" placeholder="Search Product...">
+            <select name="text" id="option">
+                <option value="All category">All Categories</option>
+                <option value="Wood">Wood</option>
+                <option value="Clay">Clay</option>
+                <option value="bamboo">Bamboo</option>
+                <option value="textile">Textile</option>
+                <option value="ceramic">Ceramic</option>
+            </select>
+            <label for="price" class="paisa">Max Price:₹ </label>
+            <input type="range" id="price" value="1000" min="500" max="2000" oninput="this.nextElementSibling.value = this.value">
+            <output class="range">1000</output>
+            <label for="star" class="paisa"> Min Rating:⭐</label>
+            <input type="range" value="4" min="0" max="5" oninput="this.nextElementSibling.value = this.value">
+            <output class="range">4</output>
+        </div>
+        <!-- product div -->
+        <div class="productdiv">
+            <!-- box1 -->
+            <div class="box">
+                <p class="productname">Handcrafted Wooden Bowl </p>
+                    <div class="details">       
+                      <div >
+                         <p class="category">Category: wood</p>
+                         <p class="price">₹1200</p>
+                         <p class="star">⭐⭐⭐⭐</p>
+                      </div>
+                      <img src="Screenshot 2025-11-08 at 10.38.03 PM.png"alt="">
+                   </div>  
+           </div>
+           <!-- box2 -->
+            <div class="box">
+                <p class="productname"> Ceramic Vase</p>
+                     <div class="details">        
+                      <div>
+                         <p class="category">Category: Ceramic</p>
+                         <p class="price">₹900</p>
+                         <p class="star">⭐⭐⭐⭐⭐</p>
+                      </div>
+                      <img src="shawl.png" alt="">
+                   </div> 
+            </div>
+             <!-- box3 -->
+            <div class="box">
+                <p class="productname"> Cotton Cushion Cover</p>
+                     <div class="details">        
+                      <div>
+                         <p class="category">Category:Textile </p>
+                         <p class="price">₹500</p>
+                         <p class="star">⭐⭐⭐</p>
+                      </div>
+                      <img src="Screenshot 2025-11-08 at 10.43.52 PM.png" alt="">
+                   </div> 
+            </div>
+             <!-- box4 -->
+            <div class="box"><p class="productname"> Bamboo Basket</p>
+                     <div class="details">        
+                      <div>
+                         <p class="category">Category: bamboo</p>
+                         <p class="price">₹700</p>
+                         <p class="star">⭐⭐⭐⭐</p>
+                      </div>
+                      <img src="Screenshot 2025-11-08 at 10.38.51 PM.png" alt="">
+                   </div> 
+                </div> 
+                   <!-- box5-->
+            <div class="box"><p class="productname"> Terracotta Lamp </p>
+                     <div class="details">        
+                      <div>
+                         <p class="category">Category: clay</p>
+                         <p class="price">₹1500</p>
+                         <p class="star">⭐⭐⭐⭐⭐</p>
+                      </div>
+                      <img src="Screenshot 2025-11-08 at 10.40.13 PM.png" alt="">
+                   </div> 
+                </div>  
+                <!-- box6 -->
+            <div class="box"><p class="productname">Woolen Shawls </p>
+                     <div class="details">        
+                      <div>
+                         <p class="category">Category: textile</p>
+                         <p class="price">₹200</p>
+                         <p class="star">⭐⭐⭐⭐</p>
+                      </div>
+                      <img src="shawls.png" alt="">
+                   </div> 
+                </div>
+        </div>
+    </div>  
+</body> 
+</html
